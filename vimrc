@@ -15,14 +15,15 @@ syntax on
 " Vim UI
 "--------
 " color scheme
-set background=dark
-color solarized
-"colorscheme elflord
+" set background=dark
+"set background=light
+"color solarized
+colorscheme distinguished
 
 " highlight current line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
+au WinLeave * set nocursorline "nocursorcolumn
+au WinEnter * set cursorline "cursorcolumn
+set cursorline "cursorcolumn
 
 " search
 set incsearch
@@ -48,7 +49,8 @@ set backspace=indent,eol,start                                    " More powerfu
 set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
 set mouse=v                                                       " use mouse in all modes
 set report=0                                                      " always report number of lines changed                "
-set nowrap                                                        " dont wrap lines
+"set nowrap                                                        " dont wrap lines
+set wrap                                                        " dont wrap lines
 set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
 set number                                                        " show line numbers
 set showmatch                                                     " show matching bracket (briefly jump)
@@ -56,7 +58,7 @@ set showcmd                                                       " show typed c
 set title                                                         " show file in titlebar
 set laststatus=2                                                  " use 2 lines for the status bar
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
-set matchpairs+=<:>                                               " specially for html
+" set matchpairs+=<:>                                               " specially for html
 " set relativenumber
 
 " Default Indentation
@@ -212,7 +214,8 @@ let NERDCompactSexyComs=1
 " let g:airline_left_sep='|'
 " let g:airline_right_sep='|'
 " let g:airline_theme='simple'
-let g:airline_theme='powerlineish'
+" let g:airline_theme='powerlineish'
+let g:airline_theme='light'
 let g:airline_powerline_fonts=1
 let g:airline_detect_spell=1
 
@@ -254,7 +257,7 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " Keybindings for plugin toggle
 let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 nnoremap <F7> :set invnu<CR>
-nnoremap <F8> :set invpaste paste?<CR>
+nnoremap <F8> :set invpaste paste<CR>
 set pastetoggle=<F8>
 nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
@@ -263,6 +266,28 @@ nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
+
+" vimwiki
+filetype plugin on
+let g:vimwiki_list = [{
+            \"path": "~/notes/",
+            \"path_html": "~/notes_html/",
+            \"syntax": "markdown",
+            \"ext": ".md",
+            \"auto_export": 0
+            \}]
+let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
+nmap <C-n> :MarkdownPreview<CR>
+" nmap <> :StopMarkdownPreview<CR>
+autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set noimdisable
+iab xt <C-r>=strftime("%Y/%m/%d")<cr>
+
+" Calendar
+let g:calendar_frame = 'default'
+let g:calendar_diary='~/notes/diary'
+let g:calendar_datetime = 'statusline'
+nmap <F9> :Calendar<cr>
+let g:vimwiki_use_calendar = 0
 
 "------------------
 " Useful Functions
@@ -338,12 +363,12 @@ function! LoadCscope()
   endif
 endfunction
 au BufEnter /* call LoadCscope()
-map <F2> <CR>
+" map <F2> <CR>
 
 nnoremap <C-l> gt
 nnoremap <C-h> gT
-nnoremap <C-i> :Tbbn<cr>
-nnoremap <C-u> :Tbbp<cr>
+"nnoremap <C-i> :Tbbn<cr>
+"nnoremap <C-u> :Tbbp<cr>
 nmap <F10> :tabe<Space>
 
 " if NERDTree show messy code
