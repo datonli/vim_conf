@@ -270,8 +270,8 @@ nnoremap <leader>v V`]
 " vimwiki
 filetype plugin on
 let g:vimwiki_list = [{
-            \"path": "~/notes/",
-            \"path_html": "~/notes_html/",
+            \"path": "~/notes/work/",
+            \"path_html": "~/notes/work/html/",
             \"syntax": "markdown",
             \"ext": ".md",
             \"auto_export": 0
@@ -374,3 +374,24 @@ nmap <F10> :tabe<Space>
 " if NERDTree show messy code
 "let g:NERDTreeDirArrowExpandable = '+'
 "let g:NERDTreeDirArrowCollapsible = '~'
+"
+"
+"
+"
+"
+"
+"
+"
+"tmux_init()
+"{
+"    tmux new-session -s "mm" -d -n "local"    # 开启一个会话
+"    tmux new-window -n "files"          # 开启一个窗口
+"    tmux split-window -h                # 开启一个竖屏
+"    #tmux split-window -v "top"          # 开启一个横屏,并执行top命令
+"    tmux -2 attach-session -d           # tmux -2强制启用256color，连接已开启的tmux
+"}
+"# 判断是否已有开启的tmux会话，没有则开启
+"if which tmux 2>&1 >/dev/null; then
+"    test -z "$TMUX" && (tmux attach || tmux_init)
+"fi"
+

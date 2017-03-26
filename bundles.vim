@@ -70,9 +70,9 @@ Bundle 'nvie/vim-togglemouse'
 "Bundle 'digitaltoad/vim-jade'
 
 "------- web frontend ----------
-" Bundle 'othree/html5.vim'
+Bundle 'othree/html5.vim'
 " Bundle 'tpope/vim-haml'
-" Bundle 'pangloss/vim-javascript'
+Bundle 'pangloss/vim-javascript'
 " Bundle 'kchmck/vim-coffee-script'
 " Bundle 'nono/jquery.vim'
 " Bundle 'groenewege/vim-less'
@@ -81,7 +81,7 @@ Bundle 'nvie/vim-togglemouse'
 
 "------- markup language -------
 Bundle 'tpope/vim-markdown'
-" Bundle 'timcharper/textile.vim'
+Bundle 'timcharper/textile.vim'
 
 "------- Ruby --------
 " Bundle 'tpope/vim-endwise'
@@ -93,7 +93,7 @@ Bundle 'tpope/vim-markdown'
 " Bundle 'kien/rainbow_parentheses.vim'
 " Bundle 'wlangstroth/vim-racket'
 " Bundle 'vim-scripts/VimClojure'
-" Bundle 'rosstimson/scala-vim-support'
+Bundle 'rosstimson/scala-vim-support'
 
 "--------------
 " Color Schemes
@@ -107,3 +107,11 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'fisadev/fisa-vim-colorscheme'
 
 filetype plugin indent on     " required!
+
+" Document wiki
+Bundle 'vimwiki/vimwiki'
+Bundle 'mattn/calendar-vim'
+" Bundle 'itchyny/calendar.vim'
+" Bundle 'suan/vim-instant-markdown'
+Bundle 'iamcco/mathjax-support-for-mkdp'
+Bundle 'iamcco/markdown-preview.vim'
