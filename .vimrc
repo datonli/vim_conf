@@ -191,6 +191,16 @@ let NERDCompactSexyComs=1
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe'
 nnoremap <F1> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " SuperTab
 " let g:SuperTabDefultCompletionType='context'
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
