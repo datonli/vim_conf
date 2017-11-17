@@ -11,7 +11,8 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
@@ -59,6 +60,7 @@ Bundle 'davidhalter/jedi-vim'
 "-------------
 " Bundle 'humiaozuzu/fcitx-status'
 Bundle 'nvie/vim-togglemouse'
+Bundle 'will133/vim-dirdiff'
 
 "----------------------------------------
 " Syntax/Indent for language enhancement

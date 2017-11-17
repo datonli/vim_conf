@@ -14,12 +14,12 @@ syntax on
 "--------
 " color scheme
 set background=dark
-color solarized
+"color solarized
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
+au WinEnter * set cursorline "cursorcolumn
+set cursorline "cursorcolumn
 
 " search
 set incsearch
@@ -34,7 +34,7 @@ set nofoldenable                                                  " disable fold
 set confirm                                                       " prompt when existing from an unsaved file
 set backspace=indent,eol,start                                    " More powerful backspacing
 set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
-"set mouse=a                                                       " use mouse in all modes
+set mouse=                                                        " use mouse in all modes
 set report=0                                                      " always report number of lines changed                "
 set nowrap                                                        " dont wrap lines
 set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
@@ -162,30 +162,34 @@ let NERDCompactSexyComs=1
 " let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
-let g:neocomplcache_enable_at_startup=1
-let g:neoComplcache_disableautocomplete=1
+"let g:neocomplcache_enable_at_startup=1
+"let g:neoComplcache_disableautocomplete=1
 "let g:neocomplcache_enable_underbar_completion = 1
 "let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-set completeopt-=preview
+"let g:neocomplcache_enable_smart_case=1
+"let g:neocomplcache_min_syntax_length = 3
+"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+"set completeopt-=preview
 
-imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-imap <C-j> <Plug>(neocomplcache_snippets_force_jump)
-smap <C-j> <Plug>(neocomplcache_snippets_force_jump)
+"imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+"smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+"imap <C-j> <Plug>(neocomplcache_snippets_force_jump)
+"smap <C-j> <Plug>(neocomplcache_snippets_force_jump)
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType c setlocal omnifunc=ccomplete#Complete
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType c setlocal omnifunc=ccomplete#Complete
+"if !exists('g:neocomplcache_omni_patterns')
+"  let g:neocomplcache_omni_patterns = {}
+"endif
+"let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe'
+nnoremap <F1> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " SuperTab
 " let g:SuperTabDefultCompletionType='context'
@@ -269,7 +273,7 @@ if has("gui_running")
     map <D-0> :tablast<CR>
 endif
 
-set csprg=/Users/lidatong/.vim/cscope-15.8b/src/cscope
+set csprg=~/.vim/cscope-15.8b/src/cscope
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
   if (!empty(db))
@@ -280,7 +284,6 @@ function! LoadCscope()
   endif
 endfunction
 au BufEnter /* call LoadCscope()
-
 nnoremap <C-l> gt
 nnoremap <C-h> gT
 nmap <F10> :tabe<Space>
