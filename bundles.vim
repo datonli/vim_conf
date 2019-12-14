@@ -14,7 +14,9 @@ Bundle 'gmarik/vundle'
 "------------------
 Bundle 'Shougo/neocomplcache'
 "Bundle 'Valloric/YouCompleteMe'
-"Bundle 'vim-syntastic/syntastic'
+
+Bundle 'dense-analysis/ale'
+
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
@@ -51,11 +53,13 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " IDE features
 "--------------
 Bundle 'scrooloose/nerdtree'
-"Bundle 'humiaozuzu/TabBar'
 Bundle 'majutsushi/tagbar'
+"Bundle 'humiaozuzu/TabBar'
+Bundle 'ludovicchabant/vim-gutentags'
+Bundle 'skywind3000/gutentags_plus'
+Bundle 'skywind3000/vim-preview'
 Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tacahiroy/ctrlp-funky'
+"Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-airline/vim-airline'
@@ -65,7 +69,6 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'davidhalter/jedi-vim'
 
 Bundle 'Yggdroot/LeaderF'
-Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 
 Bundle 'terryma/vim-multiple-cursors'
