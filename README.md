@@ -45,8 +45,8 @@ sudo apt-get install vim-gtk               # Ubuntu
 
 ### Screenshots
 
-![Completions](https://raw.github.com/osDanielLee/vim_conf/master/screenshots/completions.gif)
-![Snippets](https://raw.github.com/osDanielLee/vim_conf/master/screenshots/snippets.gif)
+![Completions](https://raw.github.com/humiaozuzu/dot-vimrc/master/screenshots/completions.gif)
+![Snippets](https://raw.github.com/humiaozuzu/dot-vimrc/master/screenshots/snippets.gif)
 
 #### Sometimes we need to jump to previous positions to copy/paste or do some fixes:
 ## Fast navigation
@@ -93,19 +93,13 @@ sudo apt-get install vim-gtk               # Ubuntu
 ## IDE features
 
 * [nerdtree](http://github.com/scrooloose/nerdtree) - A tree explorer plugin for navigating the filesystem.
-* [tabbar](http://github.com/humiaozuzu/TabBar) (Useless and delete it) -  Add tab bar and quickt tab switch with alt+1~9.
+* [tabbar](http://github.com/humiaozuzu/TabBar) -  Add tab bar and quickt tab switch with alt+1~9.
 * [tagbar](http://github.com/majutsushi/tagbar) - Displays the tags of the current file in a sidebar.
 * [ack-vim](http://github.com/mileszs/ack.vim) - Front for the Perl module App::Ack.
 * [ctrlp](https://github.com/kien/ctrlp.vim) - Fuzzy file, buffer, mru and tag finder.
-* [powerline](https://github.com/Lokaltog/vim-powerline) (Too old and delete it) - The ultimate vim statusline utility.
-* [airline](https://github.com/vim-airline/vim-airline) - Altercation for vim-powerline.
-* [airline-themes](https://github.com/vim-airline/vim-airline-themes) - More themes for airline.
-* [powerline](https://github.com/powerline/powerline) - A statusline plugin for vim.
+* [powerline](https://github.com/Lokaltog/vim-powerline) - The ultimate vim statusline utility.
 * [fugitive](https://github.com/tpope/vim-fugitive/) - a Git wrapper so awesome, it should be illegal.
 * [syntastic](https://github.com/scrooloose/syntastic) - Syntax checking hacks for vim.
-* [jedi-vim](https://github.com/davidhalter/jedi-vim) - Jedi autocompletion library.
-* [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace) - All trailing whitespace to be highlighted in red.
-* [syntastic](https://github.com/vim-syntastic/syntastic) - Syntax checking hacks for vim.
 
 ### Dependencie
 
@@ -155,12 +149,12 @@ YAML         | js-yaml       | `npm install -g js-yaml`
 
 ### Screenshots
 
-![Vim IDE 1](https://raw.github.com/osDanielLee/vim_conf/master/screenshots/vim.jpg)
-![Vim IDE 2](https://raw.github.com/osDanielLee/vim_conf/master/screenshots/vim2.jpg)
+![Vim IDE 1](https://raw.github.com/humiaozuzu/dot-vimrc/master/screenshots/vim.jpg)
+![Vim IDE 2](https://raw.github.com/humiaozuzu/dot-vimrc/master/screenshots/vim2.jpg)
 
 ## Other Utils
 
-* [fcitx-status](https://github.com/osDanielLee/fcitx-status) - automatic change status of fcitx in vim.
+* [fcitx-status](https://github.com/humiaozuzu/fcitx-status) - automatic change status of fcitx in vim.
 * [togglemouse](https://github.com/nvie/vim-togglemouse/) - Toggles the mouse focus between Vim and your terminal emulator, allowing terminal emulator mouse commands, like copy/paste.
 
 ### Shortcuts

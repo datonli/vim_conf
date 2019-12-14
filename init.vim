@@ -1,8 +1,6 @@
 source ~/.vim/bundles.vim
 
 " encoding dectection
-set encoding=utf-8
-set termencoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 " enable filetype dectection and ft specific plugin/indent
@@ -15,24 +13,17 @@ syntax on
 " Vim UI
 "--------
 " color scheme
-set background=dark
-color solarized
-"colorscheme elflord
+" set background=dark
+" color solarized
+" colorscheme distinguished
 
 " highlight current line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
+" au WinLeave * set nocursorline nocursorcolumn
+" au WinEnter * set cursorline cursorcolumn
+set cursorline "cursorcolumn
 
 " search
 set incsearch
-set hlsearch    " I need hightlight !!!
-autocmd cursorhold * set nohlsearch
-noremap n :set hlsearch<cr>n
-noremap N :set hlsearch<cr>N
-noremap / :set hlsearch<cr>/
-noremap ? :set hlsearch<cr>?
-noremap * *:set hlsearch<cr>
 "set highlight 	" conflict with highlight current line
 set ignorecase
 set smartcase
@@ -40,13 +31,12 @@ set smartcase
 " editor settings
 set history=1000
 set nocompatible
-let $LANG = 'en'
-set langmenu=en
 set nofoldenable                                                  " disable folding"
 set confirm                                                       " prompt when existing from an unsaved file
 set backspace=indent,eol,start                                    " More powerful backspacing
 set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
-set mouse=v                                                       " use mouse in all modes
+"set mouse=a                                                       " use mouse in all modes
+set mouse=v
 set report=0                                                      " always report number of lines changed                "
 set nowrap                                                        " dont wrap lines
 set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
@@ -55,8 +45,9 @@ set showmatch                                                     " show matchin
 set showcmd                                                       " show typed command in status bar
 set title                                                         " show file in titlebar
 set laststatus=2                                                  " use 2 lines for the status bar
-set matchtime=2                                                   " show matching bracket for 0.2 seconds
+" set matchtime=2                                                   " show matching bracket for 0.2 seconds
 set matchpairs+=<:>                                               " specially for html
+set hlsearch                                                      " I need hightlight !!!
 " set relativenumber
 
 " Default Indentation
@@ -76,39 +67,6 @@ autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-
-""""""""""""""""""""""
-"Quickly Run
-""""""""""""""""""""""
-map <F1> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-	exec "w"
-	if &filetype == 'c'
-		exec "!g++ % -o %<"
-		exec "!time ./%<"
-	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-		exec "!time ./%<"
-	elseif &filetype == 'java'
-		exec "!javac %"
-		exec "!time java %<"
-	elseif &filetype == 'scala'
-		exec "!scalac %"
-		exec "!time scala %<"
-	elseif &filetype == 'sh'
-		:!time bash %
-	elseif &filetype == 'python'
-		exec "!time python3 %"
-	elseif &filetype == 'html'
-		exec "!firefox % &"
-	elseif &filetype == 'go'
-        exec "!go build %<"
-		exec "!time go run %"
-	elseif &filetype == 'mkd'
-		exec "!~/.vim/markdown.pl % > %.html &"
-		exec "!firefox %.html &"
-	endif
-endfunc
 
 " syntax support
 autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
@@ -205,17 +163,6 @@ let NERDCompactSexyComs=1
 " powerline
 " let g:Powerline_symbols = 'fancy'
 
-" airline
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline_left_sep='|'
-" let g:airline_right_sep='|'
-" let g:airline_theme='simple'
-let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts=1
-let g:airline_detect_spell=1
-
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
 let g:neoComplcache_disableautocomplete=1
@@ -253,9 +200,8 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 " Keybindings for plugin toggle
 let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-nnoremap <F7> :set invnu<CR>
-nnoremap <F8> :set invpaste paste?<CR>
-set pastetoggle=<F8>
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
 nmap <F5> :TagbarToggle<cr>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
@@ -325,9 +271,7 @@ if has("gui_running")
     map <D-0> :tablast<CR>
 endif
 
-if !has("cscope")
-    set csprg=~/.vim/cscope-15.8b/src/cscope
-endif
+set csprg=~/.vim/cscope-15.8b/src/cscope
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
   if (!empty(db))
@@ -338,14 +282,7 @@ function! LoadCscope()
   endif
 endfunction
 au BufEnter /* call LoadCscope()
-map <F2> <CR>
 
 nnoremap <C-l> gt
 nnoremap <C-h> gT
-nnoremap <C-i> :Tbbn<cr>
-nnoremap <C-u> :Tbbp<cr>
 nmap <F10> :tabe<Space>
-
-" if NERDTree show messy code
-"let g:NERDTreeDirArrowExpandable = '+'
-"let g:NERDTreeDirArrowCollapsible = '~'

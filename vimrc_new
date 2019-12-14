@@ -13,7 +13,7 @@ syntax on
 " Vim UI
 "--------
 " color scheme
-set background=dark
+set background=light
 "color solarized
 
 " Airline setting
@@ -21,18 +21,14 @@ set background=dark
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
-"au WinEnter * set cursorline "cursorcolumn
-"set cursorline "cursorcolumn
+au WinEnter * set cursorline "cursorcolumn
+set cursorline "cursorcolumn
 
 " search
 set incsearch
 "set highlight 	" conflict with highlight current line
-"set ignorecase
+set ignorecase
 set smartcase
-set cindent
-set cinoptions=g0
-
-" set list listchars=tab:>-
 
 " editor settings
 set history=1000
@@ -54,79 +50,18 @@ set matchtime=2                                                   " show matchin
 "set matchpairs+=<:>                                               " specially for html
 set hlsearch                                                      " I need hightlight !!!
 " set relativenumber
-let &colorcolumn="80"
+let &colorcolumn="120"
 
 " Default Indentation
 set autoindent
 set smartindent     " indent when
-set tabstop=2       " tab width
-set softtabstop=2   " backspace
-set shiftwidth=2    " indent width
+set tabstop=4       " tab width
+set softtabstop=4   " backspace
+set shiftwidth=4    " indent width
 " set textwidth=79
 " set smarttab
 set expandtab       " expand tab to space
 
-let g:clang_format#style_options = {
-        \ "Language" : "Cpp",
-        \ "BasedOnStyle" : "Google",
-        \ "AccessModifierOffset" : -1,
-        \ "AlignAfterOpenBracket" : "true",
-        \ "AlignEscapedNewlinesLeft" : "true",
-        \ "AlignOperands" : "true",
-        \ "AlignTrailingComments" : "true",
-        \ "AllowAllParametersOfDeclarationOnNextLine" : "true",
-        \ "AllowShortBlocksOnASingleLine" : "false",
-        \ "AllowShortCaseLabelsOnASingleLine" : "false",
-        \ "AllowShortIfStatementsOnASingleLine" : "true",
-        \ "AllowShortLoopsOnASingleLine" : "true",
-        \ "AllowShortFunctionsOnASingleLine" : "All",
-        \ "AlwaysBreakAfterDefinitionReturnType" : "false",
-        \ "AlwaysBreakTemplateDeclarations" : "true",
-        \ "AlwaysBreakBeforeMultilineStrings" : "true",
-        \ "BreakBeforeBinaryOperators" : "None",
-        \ "BreakBeforeTernaryOperators" : "true",
-        \ "BreakConstructorInitializersBeforeComma" : "false",
-        \ "BinPackParameters" : "true",
-        \ "BinPackArguments" : "true",
-        \ "ColumnLimit" : 80,
-        \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
-        \ "ConstructorInitializerIndentWidth" : 4,
-        \ "DerivePointerAlignment" : "true",
-        \ "ExperimentalAutoDetectBinPacking" : "false",
-        \ "IndentCaseLabels" : "true",
-        \ "IndentWrappedFunctionNames" : "false",
-        \ "IndentFunctionDeclarationAfterType" : "false",
-        \ "MaxEmptyLinesToKeep" : 1,
-        \ "KeepEmptyLinesAtTheStartOfBlocks" : "false",
-        \ "NamespaceIndentation" : "None",
-        \ "ObjCBlockIndentWidth" : 2,
-        \ "ObjCSpaceAfterProperty" : "false",
-        \ "ObjCSpaceBeforeProtocolList" : "false",
-        \ "PenaltyBreakBeforeFirstCallParameter" : 1,
-        \ "PenaltyBreakComment" : 300,
-        \ "PenaltyBreakString" : 1000,
-        \ "PenaltyBreakFirstLessLess" : 120,
-        \ "PenaltyExcessCharacter" : 1000000,
-        \ "PenaltyReturnTypeOnItsOwnLine" : 200,
-        \ "PointerAlignment" : "Left",
-        \ "SpacesBeforeTrailingComments" : 2,
-        \ "Cpp11BracedListStyle" : "true",
-        \ "Standard" : "Auto",
-        \ "IndentWidth" : 2,
-        \ "TabWidth" : 8,
-        \ "UseTab" : "Never",
-        \ "BreakBeforeBraces" : "Attach",
-        \ "SpacesInParentheses" : "false",
-        \ "SpacesInSquareBrackets" : "false",
-        \ "SpacesInAngles" : "false",
-        \ "SpaceInEmptyParentheses" : "false",
-        \ "SpacesInCStyleCastParentheses" : "false",
-        \ "SpaceAfterCStyleCast" : "false",
-        \ "SpacesInContainerLiterals" : "true",
-        \ "SpaceBeforeAssignmentOperators" : "true",
-        \ "ContinuationIndentWidth" : 4 }
-
-autocmd FileType c ClangFormatAutoEnable
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
@@ -231,15 +166,15 @@ let NERDCompactSexyComs=1
 " let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
-let g:neocomplcache_enable_at_startup=1
-let g:neoComplcache_disableautocomplete=1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-set completeopt-=preview
-
+"let g:neocomplcache_enable_at_startup=1
+"let g:neoComplcache_disableautocomplete=1
+"let g:neocomplcache_enable_underbar_completion = 1
+"let g:neocomplcache_enable_camel_case_completion = 1
+"let g:neocomplcache_enable_smart_case=1
+"let g:neocomplcache_min_syntax_length = 3
+"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+"set completeopt-=preview
+"
 "imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 "smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 "imap <C-j> <Plug>(neocomplcache_snippets_force_jump)
@@ -297,9 +232,9 @@ let g:ctrlp_follow_symlinks=1
 "nnoremap <Leader>fu :CtrlPFunky<Cr>
 "nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
-"nmap <F4>f :CtrlPFunky<cr>
-"nmap <F4>F :execute 'CtrlPFunky ' . expand('<cword>')<cr>
-"nmap <F4>p :CtrlPMRU<cr>
+nmap <F4>f :CtrlPFunky<cr>
+nmap <F4>F :execute 'CtrlPFunky ' . expand('<cword>')<cr>
+nmap <F4>p :CtrlPMRU<cr>
 let g:ctrlp_funky_syntax_highlight = 1
 
 let g:ctrlp_extensions = ['funky']
@@ -324,7 +259,6 @@ let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 nmap <F1> :AsyncRun<Space>
 nmap <F2> :copen<cr>
 nmap <F3> :cclose<cr>
-nmap <F4> :ClangFormat<cr>
 "nmap <F3> :GundoToggle<cr>
 "nmap <F4> :IndentGuidesToggle<cr>
 "nmap <F4> <Plug>(EasyAlign)<cr>
@@ -428,7 +362,7 @@ function! g:CscopeUpdate(workdir, cscopeout)
 				\ "cscope -b -R -f ".l:cscopeout
 endfunc
 
-nmap <F8> :call g:CscopeUpdate(".", "cscope.out")<cr>
+nmap <F11> :call g:CscopeUpdate(".", "cscope.out")<cr>
 
 nmap <F10> :tabe<Space>
 " In insert mode, then Ctrl+v, Alt+1,2,3,4...

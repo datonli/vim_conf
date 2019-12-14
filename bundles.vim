@@ -1,7 +1,8 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+"set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -11,8 +12,9 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-"Bundle 'Shougo/neocomplcache'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'Shougo/neocomplcache'
+"Bundle 'Valloric/YouCompleteMe'
+"Bundle 'vim-syntastic/syntastic'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
@@ -22,6 +24,13 @@ Bundle 'honza/vim-snippets'
 "------ snipmate dependencies -------
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
+
+Bundle 'skywind3000/asyncrun.vim'
+Bundle 'thaerkh/vim-workspace'
+Bundle 'junegunn/vim-easy-align'
+Bundle 'octol/vim-cpp-enhanced-highlight'
+
+Bundle 'rhysd/vim-clang-format'
 
 "-----------------
 " Fast navigation
@@ -46,14 +55,20 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'powerline/powerline'
-Bundle 'scrooloose/syntastic'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'davidhalter/jedi-vim'
+
+Bundle 'Yggdroot/LeaderF'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
+
+Bundle 'terryma/vim-multiple-cursors'
 
 "-------------
 " Other Utils
@@ -89,7 +104,7 @@ Bundle 'timcharper/textile.vim'
 " Bundle 'tpope/vim-endwise'
 
 "------- Go ----------
-"Bundle 'fatih/vim-go'
+Bundle 'fatih/vim-go'
 
 "------- FPs ------
 " Bundle 'kien/rainbow_parentheses.vim'
